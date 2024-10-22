@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles/output.css">
+    <title>Cardápio - Rei do Hambúrguer</title>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <style>
+
+
+      .bg-home {
+            background-image: url('./assets/bg.png'); /* Ajuste o caminho se necessário */
+            background-size: cover;
+            background-position: center;
+      }
+        /* Adicionando estilo para bordas ao redor dos cards */
+        .card {
+            border: 2px solid #e0e0e0;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .card img {
+            border-radius: 10px;
+        }
+
+        .card:hover {
+            border-color: #4caf50;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="w-full h-[420px] bg-zinc-900 bg-home bg-cover bg-center">
+        <div class="w-full h-full flex flex-col justify-center items-center">
+            <img src="./assets/logo.png" alt="Logo Hamburgueria" class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200">
+            <h1 class="text-4xl mt-4 mb-2 font-bold text-white">Rei do Hambúrguer</h1>
+            <span class="text-white font-medium">Rua dos Saborosos, 123 Bairro Delícias - São Paulo, SP</span>
+            <div class="bg-lime-600 px-4 py-1 rounded-lg mt-5" id="date-span">
+                <div class="flex justify-end">
+                    </div>
+                    <button id="operationStatusBtn"class="operation-status-btn text-white font-bold py-1 px-2 rounded" style="height: 24px; font-size: 12px; justify-content: center; align-items: center" >
+                        Aberto
+                    </button>
+                
+                <span class="text-white font-medium">Seg á Dom - 18:00 as 23:00</span>
+            </div>
+        </div>
+    </header>
+    <!-- Fim do Header -->
+
+    <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">CONHEÇA NOSSO MENU</h2>
+    <div class="categories-nav relative flex justify-center items-center h-16">
+        <input type="text" id="search-bar" placeholder="Faça sua pesquisa" class="search-input border border-lime-600 rounded p-2 w-1/3 max-w-md pl-10">
+        <i class="fa fa-search absolute left-[calc(50%-130px)] text-gray-400"></i>
+    </div>
+    <!-- Menu de categorias no topo -->
+    <nav class="categories-nav">
+        <div class="categories-container">
+            <a href="#hamburgueres" class="category-link">Hambúrgueres</a>
+            <a href="#bebidas" class="category-link">Bebidas</a>
+            <a href="#sobremesas" class="category-link">Sobremesas</a>
+        </div>
+    </nav>
+    
+
+    </div>
+
+    <!--Inicio Menu-->
+    <section id="hamburgueres">
+        <div class="mx-auto max-w-7xl px-2 my-2" id="menu-section">
+            <h2 class="hamburgueres-title font-bold text-3xl" >Hambúrgueres</h2>
+            <div id="menu">
+            <main class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16">
+                <!-- Produto Item -->
+                <div class="flex gap-2 card">
+                    <img src="./assets/hamb-1.png" alt="Hamburguer Smash" class="w-28 h-28 hover:scale-110 hover:rotate-2 duration-300">
+                    <div class="product" data-name="Hambúrguer Smash" data-category="Hambúrgueres">
+                        <p class="font-bold">Hambúrguer Smash</p>
+                        <p class="text-sm">Pão levinho de fermentação natural da Trigou, burger 160g, queijo prato e maionese da casa.</p>
+                        <div class="flex items-center space-x-2 justify-between mt-2">
+                            <p class="font-bold text-lg">R$ 18,90</p>
+                            <button class="bg-lime-600 px-3 py-1.5 rounded add-to-cart-btn" data-name="Hamburguer Smash"
+                                data-price="18,90">
+                                <i class="fa fa-cart-plus text-lg text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fim Produto Item -->
+    
+                <!-- Produto Item -->
+                <div class="flex gap-2 card">
+                    <img src="./assets/hamb-2.png" alt="Hamburguer Duplo" class="w-28 h-28 hover:scale-110 hover:rotate-2 duration-300">
+                    <div class="product" data-name="Hambúrguer Duplo" data-category="Hambúrgueres">
+                        <p class="font-bold">Hambúrguer Duplo</p>
+                        <p class="text-sm">Hambúrguer duplo com fermentação natural da Trigou, burger 160g, bacon, cheddar e tomate.</p>
+                        <div class="flex items-center space-x-2 justify-between mt-2">
+                            <p class="font-bold text-lg">R$ 32,90</p>
+                            <button class="bg-lime-600 px-3 py-1.5 rounded add-to-cart-btn" 
+                                data-price="32,90">
+                                <i class="fa fa-cart-plus text-lg text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fim Produto Item -->
+    
+                <!-- Produto Item -->
+                <div class="flex gap-2 card">
+                    <img src="./assets/hamb-3.png" alt="Hamburguer Duplo Cheddar" class="w-28 h-28 hover:scale-110 hover:rotate-2 duration-300">
+                    <div class="product" data-name="Hambúguer Duplo Cheddar" data-category="Hambúrgueres">
+                        <p class="font-bold">Hambúrguer Duplo Cheddar</p>
+                        <p class="text-sm">Hambúrguer duplo com fermentação natural da Trigou, burger 160g, cheddar duplo e maionese.</p>
+                        <div class="flex items-center space-x-2 justify-between mt-2">
+                            <p class="font-bold text-lg">R$ 35,90</p>
+                            <button class="bg-lime-600 px-3 py-1.5 rounded add-to-cart-btn" data-name="Hamburguer Duplo Cheddar"
+                                data-price="35,90">
+                                <i class="fa fa-cart-plus text-lg text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fim Produto Item -->
+    
+                <!-- Produto Item -->
+                <div class="flex gap-2 card">
+                    <img src="./assets/hamb-4.png" alt="Hamburguer da Casa" class="w-28 h-28 hover:scale-110 hover:rotate-2 duration-300">
+                    <div class="product" data-name="Hambúrguer da Casa" data-category="Hambúrgueres">
+                        <p class="font-bold">Hambúrguer da Casa</p>
+                        <p class="text-sm">Pão levinho de fermentação natural da Trigou, burger de frango 160g, salada e maionese.</p>
+                        <div class="flex items-center space-x-2 justify-between mt-2">
+                            <p class="font-bold text-lg">R$ 30,00</p>
+                            <button class="bg-lime-600 px-3 py-1.5 rounded add-to-cart-btn" data-name="Hamburguer da Casa"
+                                data-price="30,00">
+                                <i class="fa fa-cart-plus text-lg text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+    </section>
+    
+            <!-- Fim Produto Item -->
+        </main>
+
+        </div>
+
+        <section id="bebidas">
+            <div class="mx-auto max-w-7xl px-2 my-2" id="menu-section">
+                <h2 class="bebidas-title font-bold text-3xl">Bebidas</h2>
+            <!-- Bebidas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16" id="menu">
+            <div class="flex gap-2 card">
+                <img src="./assets/refri-1.png" alt="Coca Lata" class="w-28 h-28 hover:scale-110 hover:rotate-2 duration-300">
+                <div class="product" data-name="Coca Lata" data-category="Bebidas">
+                    <p class="font-bold">Coca-Cola lata</p>
+                    <p class="text-sm">Lata de 350ml.</p>
+                    <div class="flex items-center space-x-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 6,00</p>
+                        <button class="bg-lime-600 px-3 py-1.5 rounded add-to-cart-btn" data-name="Coca Lata" data-price="6,00">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex gap-2 card">
+                <img src="./assets/refri-2.png" alt="Guaraná Lata" class="w-28 h-28 hover:scale-110 hover:rotate-2 duration-300">
+                <div class="product" data-name="Guaraná Lata" data-category="Bebidas">
+                    <p class="font-bold">Guaraná lata</p>
+                    <p class="text-sm">Lata de 350ml.</p>
+                    <div class="flex items-center space-x-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 6,00</p>
+                        <button class="bg-lime-600 px-3 py-1.5 rounded add-to-cart-btn" data-name="Guarana Lata"
+                            data-price="6,00">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fim Bebidas -->
+
+         <!-- Bebidas -->
+         <div class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16" id="menu">
+            <div class="flex gap-2 card">
+                <img src="./assets/Suco de Laranja.png" alt="Suco Laranja" class="w-28 h-28 hover:scale-110 hover:rotate-2 duration-300">
+                <div class="product" data-name="Suco de Laranja" data-category="Bebidas">
+                    <p class="font-bold">Suco de Laranja</p>
+                    <p class="text-sm">Delicioso suco de laranja lima.</p>
+                    <div class="flex items-center space-x-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 5,00</p>
+                        <button class="bg-lime-600 px-3 py-1.5 rounded add-to-cart-btn" data-name="Suco Laranja" data-price="5,00">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex gap-2 card">
+                <img src="./assets/agua com gas.png" alt="Água Gás" class="w-28 h-28 hover:scale-110 hover:rotate-2 duration-300">
+                <div class="product" data-name="Água com Gás" data-category="Bebidas">
+                    <p class="font-bold">Água com Gás</p>
+                    <p class="text-sm"> Água gaseificada com gelo e rodelas de limão.</p>
+                    <div class="flex items-center space-x-2 justify-between mt-2">
+                        <p class="font-bold text-lg">R$ 3,00</p>
+                        <button class="bg-lime-600 px-3 py-1.5 rounded add-to-cart-btn" data-name="Agua Gas"
+                            data-price="3,00">
+                            <i class="fa fa-cart-plus text-lg text-white"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Fim Bebidas -->
+    </div>
+        </section>
+
+        <section id="sobremesas">
+            
+    <!--Sobremesas-->
+    <div class="mx-auto max-w-7xl px-2 my-2" id="menu-section">
+        <h2 class="sobremesas-title font-bold text-3xl">Sobremesas</h2>
+</div>
+
+<!-- Sobremesas -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16" id="menu">
+  <div class="flex gap-2 card">
+      <img src="./assets/Bolo de Chocolate.png" alt="Bolo Chocolate" class="w-28 h-28 hover:scale-110 hover:rotate-2 duration-300">
+      <div class="product" data-name="Bolo de Chocolate" data-category="Sobremesas">
+          <p class="font-bold">Bolo de Chocolate</p>
+          <p class="text-sm">Delicioso bolo de chocolate com cobertura de chocolate e nutella.</p>
+          <div class="flex items-center space-x-2 justify-between mt-2">
+              <p class="font-bold text-lg">R$ 15,00</p>
+              <button class="bg-lime-600 px-3 py-1.5 rounded add-to-cart-btn" data-name="Bolo Chocolate" data-price="15,00">
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+          </div>
+      </div>
+  </div>
+
+  <div class="flex gap-2 card">
+ <img src="./assets/Torta de Morango.png" alt="Torta Morango" class="w-28 h-28 hover:scale-110 hover:rotate-2 duration-300">
+      <div class="product" data-name="Torta de Morango" data-category="Sobremesas">
+          <p class="font-bold">Torta de Morango</p>
+          <p class="text-sm">Torta de morango grande.</p>
+          <div class="flex items-center space-x-2 justify-between mt-2">
+              <p class="font-bold text-lg">R$ 30,00</p>
+              <button class="bg-lime-600 px-3 py-1.5 rounded add-to-cart-btn" data-name="Torta Morango"
+                  data-price="30,00">
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Fim Sobremesa -->
+
+<!-- Sobremesa -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16" id="menu">
+  <div class="flex gap-2 card">
+      <img src="./assets/Salada de Frutas.png" alt="Salada Frutas" class="w-28 h-28 hover:scale-110 hover:rotate-2 duration-300">
+      <div class="product" data-name="Salada de Frutas" data-category="Sobremesas">
+          <p class="font-bold">Salada de Frutas</p>
+          <p class="text-sm">Com mamão,morango,banana,granola,uva passa e coco</p>
+          <div class="flex items-center space-x-2 justify-between mt-2">
+              <p class="font-bold text-lg">R$ 10,00</p>
+              <button class="bg-lime-600 px-3 py-1.5 rounded add-to-cart-btn" data-name="Salada Frutas" data-price="10,00">
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+          </div>
+      </div>
+  </div>
+
+  <div class="flex gap-2 card">
+      <img src="./assets/Sundae de Chocolate.png" alt="Sundade Chocolate" class="w-28 h-28 hover:scale-110 hover:rotate-2 duration-300">
+      <div class="product" data-name="Sundae de Chocolate" data-category="Sobremesas">
+          <p class="font-bold">Combo Sundade de Chocolate e Açai</p>
+          <p class="text-sm"> Sundade de chocolate com morangos,chantilly, canudos de chocolate, chocolate ao leite e bolacha oreo mais um açai com frutas.</p>
+          <div class="flex items-center space-x-2 justify-between mt-2">
+              <p class="font-bold text-lg">R$ 30,00</p>
+              <button class="bg-lime-600 px-3 py-1.5 rounded add-to-cart-btn" data-name="Sundade Chocolate"
+                  data-price="30,00">
+                  <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Fim  -->
+</div>
+        </section>
+
+    
+
+    <!--Fim Menu-->
+
+    <!--Modal Cart-->
+    <div class="bg-lime-600/60 w-full h-full fixed top-0 left-0 z-9[99]  items-center justify-center hidden " id="cart-modal">
+        <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
+            <h2 class="text-center font-bold text-2xl mb-2">Meu carrinho</h2>
+
+            <div id="cart-items" class="justify-between mb-2 flex-col"></div>
+
+            <p class="font-bold">Total: <span id="cart-total">0,00</span></p>
+
+            <p class="font-bold mt-2">Endereço de entrega:</p>
+            <input type="text"class="w-full border border-gray-300 p-2 mb-4 rounded"id="address" placeholder="Digite seu endereço">
+            <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo!</p>
+
+            <p class="font-bold mt-2">Nome completo:</p>
+            <input type="text"class="w-full border border-gray-300 p-2 mb-4 rounded" id="name" placeholder="Digite seu nome completo">
+            <p class="text-red-500 hidden" id="name-warn">Digite seu nome!</p>
+
+         
+            <p class="font-bold mt-2">Pagamento:</p>
+            <select class="w-full border border-gray-300 p-2 mb-4 rounded" id="payment">
+                <option value="">Selecione a forma de pagamento</option>
+                <option value="cartao">Cartão de Débito/Crédito</option>
+                <option value="pix">Pix</option>
+                <option value="dinheiro">Dinheiro</option>
+                <option value="vale">Vale Refeição</option>
+            </select>
+            <p class="text-red-500 hidden" id="payment-warn">Selecione a forma de pagamento!</p>
+
+            <div id="troco-container" class="hidden">
+                <p class="font-bold mt-2">Troco se precisar:</p>
+                <input type="number" class="w-full border border-gray-300 p-2 mb-4 rounded" id="troco" placeholder="Digite o valor desejado">
+                <p class="text-red-500 hidden" id="troco-warn">Digite um valor válido para o troco!</p>
+            </div>
+
+            <div id="schedule-container" class="hidden">
+                <label class="font-bold mt-2" for="schedule-date">Data:</label>
+                <input type="date" class="w-full border border-gray-300 p-2 mb-4 rounded" id="schedule-date" />
+                
+                <label class="font-bold mt-2" for="schedule-time">Hora:</label>
+                <input type="time" class="w-full border border-gray-300 p-2 mb-4 rounded" id="schedule-time" />
+            </div>
+            
+            <div class="flex items-center justify-between mt-5 w-full">
+                <button id="close-modal-btn">Fechar</button>
+                <button id="to-schedule-btn" class="hidden bg-lime-600 text-white px-4 py-1 rounded">Agendar pedido</button>
+                <button id="checkout-btn" class="bg-lime-600 text-white px-4 py-1 rounded">Finalizar pedido</button>
+                
+            </div>
+            
+
+        </div>
+
+    </div>
+    <!--Fim Modal Cart-->
+
+    <!--Button Cart Footer-->
+    <footer class="w-full bg-lime-600 py-3 fixed bottom-0 z-40 flex items-center justify-center">
+        <button class="flex items-center gap-2 text-white font-bold" id="cart-btn">
+            (<span id="cart-count">0</span>)
+            Veja meu carrinho
+            <i class="fa fa-cart-plus text-lg text-white"></i>
+        </button>
+
+        <script>
+             document.getElementById("search-bar").addEventListener("input", function() {
+        const searchValue = this.value.toLowerCase();
+        const menuItems = document.querySelectorAll(".product");
+        let hamburgueresFound = false;
+        let bebidasFound = false;
+        let sobremesasFound = false;
+
+        menuItems.forEach(function(item) {
+            const productName = item.getAttribute("data-name").toLowerCase();
+            const category = item.getAttribute("data-category").toLowerCase();
+
+            if (productName.includes(searchValue)) {
+                item.parentElement.style.display = "flex"; // Mostrar o item
+                // Atualiza se a categoria foi encontrada
+                if (category === "hambúrgueres") hamburgueresFound = true;
+                if (category === "bebidas") bebidasFound = true;
+                if (category === "sobremesas") sobremesasFound = true;
+            } else {
+                item.parentElement.style.display = "none"; // Esconder o item
+            }
+        });
+
+        // Mostrar ou esconder os títulos de acordo com os resultados da pesquisa
+        document.getElementById("hamburgueres").style.display = hamburgueresFound ? "block" : "none";
+        document.getElementById("bebidas").style.display = bebidasFound ? "block" : "none";
+        document.getElementById("sobremesas").style.display = sobremesasFound ? "block" : "none";
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+
+           
+        </script>
+        
+
+    
+    
+    
+    
+    <!--Fim Button Cart Footer-->
+
+    <script src="script.js"></script>
+</body>
+
+</html>
