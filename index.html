@@ -409,7 +409,6 @@
                     <input type="text"class="w-full border border-gray-300 p-2 mb-4 rounded" id="name" placeholder="Digite seu nome completo">
                     <p class="text-red-500 hidden" id="name-warn">Digite seu nome!</p>
 
-                
                     <p class="font-bold mt-2">Pagamento:</p>
                     <select class="w-full border border-gray-300 p-2 mb-4 rounded" id="payment">
                         <option value="">Selecione a forma de pagamento</option>
@@ -419,12 +418,14 @@
                         <option value="vale">Vale Refeição</option>
                     </select>
                     <p class="text-red-500 hidden" id="payment-warn">Selecione a forma de pagamento!</p>
-
+                    
                     <div id="troco-container" class="hidden">
                         <p class="font-bold mt-2">Troco se precisar:</p>
                         <input type="number" class="w-full border border-gray-300 p-2 mb-4 rounded" id="troco" placeholder="Digite o valor desejado">
                         <p class="text-red-500 hidden" id="troco-warn">Digite um valor válido para o troco!</p>
                     </div>
+                    
+
 
                     <div id="schedule-container" class="hidden">
                         <label class="font-bold mt-2" for="schedule-date">Data:</label>
@@ -465,8 +466,10 @@
                     Veja meu carrinho
                     <i class="fa fa-cart-plus text-lg text-white"></i>
                 </button>
+                
                 <script>
-                    document.addEventListener('DOMContentLoaded', () => {
+                    document.addEventListener('DOMContentLoaded', function() {
+                        document.addEventListener('DOMContentLoaded', () => {
                         const orderTypeSelect = document.getElementById('order-type-select');
                         const orderWarn = document.getElementById('order-warn');
                         const toScheduleBtn = document.getElementById('to-schedule-btn');
@@ -539,7 +542,13 @@
                             });
                         });
                     });
+                       
+                    });
                     </script>
+                    
+                
+                    
+                    
                     
                     <!-- Fim Button Cart Footer -->
                     
