@@ -6,7 +6,7 @@ body {
   background-color: #fff;
 }
 
-/* Animação de fundo para bg-home */
+
 .bg-home {
   background-image: url('./assets/BG-2.jpg'); 
   background-size: cover;
@@ -28,14 +28,13 @@ body {
   }
 }
 
-/* Ajuste para animação em dispositivos móveis */
 @media (max-width: 600px) {
   .bg-home {
-    animation: moveBg 20s linear infinite; /* Redução no tempo para animação em telas menores */
+    animation: moveBg 20s linear infinite; 
   }
 }
 
-/* Botões e Estilos de Opções */
+
 .option {
   width: 80.5px;
   height: 28px;
@@ -63,7 +62,6 @@ body {
   align-items: center;
 }
 
-/* Cards e Layout do Menu */
 .card {
   display: flex;
   gap: 0.5rem;
@@ -86,7 +84,6 @@ body {
   width: 100%;
 }
 
-/* Estilo do Modal do Carrinho */
 #cart-modal {
   border: 5px solid rgb(92, 0, 128);
   border-radius: 10px;
@@ -96,7 +93,7 @@ body {
   z-index: 20; 
 }
 
-/* Barra de Categorias */
+
 .categories-nav {
   position: relative;
   top: 0;
@@ -136,7 +133,7 @@ body {
   border-bottom-color: #350850;
 }
 
-/* Campo de Busca */
+
 .search-input {
   width: 100%;
   padding: 8px 8px 8px 28px;
@@ -149,7 +146,7 @@ body {
   background-size: 16px;
 }
 
-/* Utilitários */
+
 .hidden {
   display: none;
 }
@@ -171,19 +168,19 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Ajuste para Navbar */
+
 .navbar {
   z-index: 10; 
 }
 
-/* Centralização das opções na web em desktop */
+
 @media (min-width: 768px) {
   .categories-container {
     justify-content: center;
   }
 }
 
-/* Estilos para dispositivos móveis */
+
 @media (max-width: 600px) {
   .carrinho-texto {
     font-size: 12px;

@@ -390,9 +390,6 @@
 
             
 
-            <!--Fim Menu-->
-
-            <!--Modal Cart-->
             <div class="bg-purple-950/60 w-full h-full fixed top-0 left-0 z-9[99]  items-center justify-center hidden " id="cart-modal">
                 <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
                     <h2 class="text-center font-bold text-2xl mb-2">Meu carrinho</h2>
@@ -457,9 +454,7 @@
                 </div>
 
             </div>
-            <!--Fim Modal Cart-->
-
-            <!--Button Cart Footer-->
+           
             <footer class="w-full bg-purple-950 py-3 fixed bottom-0 z-40 flex items-center justify-center">
                 <button class="flex items-center gap-2 text-white font-bold" id="cart-btn">
                     (<span id="cart-count">0</span>)
@@ -477,23 +472,23 @@
                         orderTypeSelect.addEventListener('change', () => {
                             const orderType = orderTypeSelect.value;
                     
-                            // Ocultar aviso e mostrar botão com base na seleção
+                            
                             if (!orderType) {
-                                orderWarn.classList.remove('hidden'); // Mostra o aviso se vazio
-                                toScheduleBtn.classList.add('hidden'); // Esconde o botão
+                                orderWarn.classList.remove('hidden'); 
+                                toScheduleBtn.classList.add('hidden'); 
                             } else {
-                                orderWarn.classList.add('hidden'); // Esconde o aviso
-                                toScheduleBtn.classList.remove('hidden'); // Mostra o botão
+                                orderWarn.classList.add('hidden'); // 
+                                toScheduleBtn.classList.remove('hidden'); 
                             }
                         });
                     
                         toScheduleBtn.addEventListener('click', () => {
                             const orderType = orderTypeSelect.value;
-                            // Lógica para agendar o pedido
+                            
                             console.log('Pedido agendado com tipo:', orderType);
                         });
                     
-                        // Adiciona o evento de input na barra de pesquisa
+                        
                         document.getElementById("search-bar").addEventListener("input", function() {
                             const searchValue = this.value.toLowerCase();
                             const menuItems = document.querySelectorAll(".product");
@@ -507,25 +502,25 @@
                                 const category = item.getAttribute("data-category").toLowerCase();
                     
                                 if (productName.includes(searchValue)) {
-                                    item.parentElement.style.display = "flex"; // Mostrar o item
-                                    // Atualiza se a categoria foi encontrada
+                                    item.parentElement.style.display = "flex"; 
+                                   
                                     if (category === "hambúrgueres") hamburgueresFound = true;
                                     if (category === "petiscos") petiscosFound = true;
                                     if (category === "bebidas") bebidasFound = true;
                                     if (category === "sobremesas") sobremesasFound = true;
                                 } else {
-                                    item.parentElement.style.display = "none"; // Esconder o item
+                                    item.parentElement.style.display = "none"; 
                                 }
                             });
                     
-                            // Mostrar ou esconder os títulos de acordo com os resultados da pesquisa
+                            
                             document.getElementById("hamburgueres").style.display = hamburgueresFound ? "block" : "none";
                             document.getElementById("petiscos").style.display = petiscosFound ? "block" : "none";
                             document.getElementById("bebidas").style.display = bebidasFound ? "block" : "none";
                             document.getElementById("sobremesas").style.display = sobremesasFound ? "block" : "none";
                         });
                     
-                        // Suporte para rolagem suave ao clicar em âncoras
+                        
                         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                             anchor.addEventListener('click', function(e) {
                                 e.preventDefault();
@@ -550,7 +545,7 @@
                     
                     
                     
-                    <!-- Fim Button Cart Footer -->
+                   
                     
                     <script src="script.js"></script>
                     </body>

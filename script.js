@@ -1,4 +1,4 @@
-// Definindo os elementos
+
 const cartBtn = document.getElementById('cart-btn');
 const operationStatusBtn = document.querySelector('.operation-status-btn');
 const cartModal = document.getElementById('cart-modal');
@@ -20,13 +20,13 @@ const searchBar = document.getElementById('search-bar');
 const navbar = document.querySelector('.categories-nav'); 
 const orderTypeInput = document.getElementById('order-type-select');
 
-// Evento para controlar a exibição do campo de troco
+
 paymentInput.addEventListener('change', function() {
     if (this.value === 'dinheiro') {
-        trocoContainer.classList.remove('hidden'); // Exibe o campo de troco
+        trocoContainer.classList.remove('hidden'); 
     } else {
-        trocoContainer.classList.add('hidden'); // Oculta o campo de troco
-        trocoInput.value = ''; // Limpa o valor do campo de troco
+        trocoContainer.classList.add('hidden'); 
+        trocoInput.value = ''; 
     }
 });
 
@@ -137,7 +137,7 @@ function checkout(isScheduled) {
     const orderType = orderTypeInput.value;
     const troco = trocoInput.value;
 
-    // Verifique se todos os campos obrigatórios estão preenchidos
+    
     if (!address || !name || !paymentMethod || !orderType) {
         alert('Preencha todos os campos obrigatórios.');
         return;
@@ -154,7 +154,7 @@ function checkout(isScheduled) {
         message += `\n\nData do Agendamento: ${scheduleDate}\nHora do Agendamento: ${scheduleTime}`;
     }
 
-    // Adiciona o campo de troco apenas se o método de pagamento for 'dinheiro' e troco não estiver vazio
+    
     if (paymentMethod === 'dinheiro' && troco) {
         message += `\nTroco para: R$ ${troco}`;
     }
@@ -171,7 +171,7 @@ function clearFormInputs() {
     trocoInput.value = '';
     scheduleDateInput.value = '';
     scheduleTimeInput.value = '';
-    trocoContainer.classList.add('hidden'); // Oculta o campo de troco ao limpar
+    trocoContainer.classList.add('hidden'); 
 }
 
 checkoutBtn.addEventListener('click', () => {
