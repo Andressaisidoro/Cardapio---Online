@@ -3,273 +3,238 @@
 @tailwind utilities;
 
 body {
-    background-color: #fff;
+  background-color: #fff;
 }
 
-/* Estilo da avaliação por estrelas */
-.rating:not(:checked) > input {
-    position: absolute;
-    appearance: none;
+/* Animação de fundo para bg-home */
+.bg-home {
+  background-image: url('./assets/BG-2.jpg'); 
+  background-size: cover;
+  background-position: center;
+  animation: moveBg 30s linear infinite;
+  background-color: rgba(0, 0, 0, 0.4); 
+  background-blend-mode: darken;
 }
 
-.rating:not(:checked) > label {
-    float: right;
-    cursor: pointer;
-    font-size: 30px;
-    color: #666;
+@keyframes moveBg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.rating:not(:checked) > label:before {
-    content: '★';
+/* Ajuste para animação em dispositivos móveis */
+@media (max-width: 600px) {
+  .bg-home {
+    animation: moveBg 20s linear infinite; /* Redução no tempo para animação em telas menores */
+  }
 }
 
-.rating > input:checked + label:hover,
-.rating > input:checked + label:hover ~ label,
-.rating > input:checked ~ label:hover,
-.rating > input:checked ~ label:hover ~ label,
-.rating > label:hover ~ input:checked ~ label {
-    color: #e58e09; /* Cor quando a estrela está selecionada */
-}
-
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
-    color: #ff9e0b; /* Cor quando a estrela está sendo hover */
-}
-
-.rating > input:checked ~ label {
-    color: #ffa723; /* Cor das estrelas selecionadas */
-}
-
-/* Estilo do botão com troca de cores */
-.wrapper {
-    --font-color-dark: #fefefe;
-    --font-color-light: #111;
-    --bg-color: #111;
-    --main-color: #fefefe;
-    position: relative;
-    width: 250px;
-    height: 36px;
-    background-color: var(--bg-color);
-    border: 2px solid var(--main-color);
-    border-radius: 34px;
-    display: flex;
-    flex-direction: row;
-    box-shadow: 4px 4px var(--main-color);
-}
-
+/* Botões e Estilos de Opções */
 .option {
-    width: 80.5px;
-    height: 28px;
-    position: relative;
-    top: 2px;
-    left: 2px;
+  width: 80.5px;
+  height: 28px;
+  position: relative;
+  top: 2px;
+  left: 2px;
 }
 
 .input {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    appearance: none;
-    cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  appearance: none;
+  cursor: pointer;
 }
 
 .btn {
-    width: 100%;
-    height: 100%;
-    background-color: var(--bg-color);
-    border-radius: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.span {
-    color: var(--font-color-dark);
+/* Cards e Layout do Menu */
+.card {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  width: 100%;
 }
 
-.input:checked + .btn {
-    background-color: var(--main-color);
+.product {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 7rem;
 }
 
-.input:checked + .btn .span {
-    color: var(--font-color-light);
+.product .flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  width: 100%;
 }
 
-/* Estilo dos cards de itens */
-.item-card {
-    border: 2px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.item-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Estilo do modal */
+/* Estilo do Modal do Carrinho */
 #cart-modal {
-    border: 5px solid green; /* Removido !important */
-    border-radius: 10px;
-    padding: 20px;
-    max-height: 100vh;
-    overflow-y: auto;
+  border: 5px solid rgb(92, 0, 128);
+  border-radius: 10px;
+  padding: 20px;
+  max-height: 100vh;
+  overflow-y: auto;
+  z-index: 20; 
 }
 
-/* Estilos para telas menores */
-@media (max-width: 600px) {
-    .carrinho-texto {
-        font-size: 12px;
-        white-space: nowrap;
-    }
-
-    .carrinho-container {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        width: auto;
-    }
-
-    .carrinho-counter {
-        font-size: 12px;
-        padding: 2px 6px;
-        border-radius: 12px;
-        background-color: #e2e8f0;
-        color: #111;
-    }
-
-    footer {
-        padding: 10px;
-        font-size: 12px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    footer .carrinho-icon {
-        width: 24px;
-        height: 24px;
-    }
-
-    footer p {
-        margin: 0;
-        font-size: 10px;
-    }
-}
-
-.hidden {
-    display: none;
-}
-
-.search-input {
-    width: 100%;
-    padding: 8px 8px 8px 35px;
-    border: 1px solid #61bd3c;
-    border-radius: 6px;
-    position: relative;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: 10px center;
-    background-size: 16px;
-}
-
-/* Removendo os estilos anteriores que podem estar causando conflito */
-.relative {
-    position: relative;
-}
-
-.fa-search {
-    display: none;
-}
-
-* Estilos do menu de categorias */
+/* Barra de Categorias */
 .categories-nav {
-    position: sticky;
-    top: 0;
-    background-color: white;
-    padding: 1rem 0;
-    border-bottom: 1px solid #e2e8f0;
-    z-index: 10;
-    margin-bottom: 2rem;
-    width: 100%;
-}
-
-/* Esconde o menu quando o modal do carrinho está visível */
-#cart-modal:not(.hidden) ~ .categories-nav,
-#cart-modal[style*="display: block"] ~ .categories-nav {
-    display: none !important;
+  position: relative;
+  top: 0;
+  background-color: white;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e2e8f0;
+  z-index: 10;
+  margin-bottom: 2rem;
+  width: 100%;
 }
 
 .categories-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 0 1rem;
-    overflow-x: auto;
+  max-width: 1200px; 
+  margin: 0 auto;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 2rem; 
+  padding: 0 1rem;
+  overflow-x: auto; 
+  flex-wrap: wrap; 
 }
 
 .category-link {
-    color: #4a5568;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-bottom: 2px solid transparent;
-    white-space: nowrap;
-    transition: all 0.3s ease;
-    text-align: center;
+  color: #4a5568;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem; 
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
 .category-link:hover,
 .category-link:focus {
-    color: #48bb78;
-    border-bottom-color: #48bb78;
+  color: #280963;
+  border-bottom-color: #350850;
 }
 
-/* Estilos das seções */
+/* Campo de Busca */
+.search-input {
+  width: 100%;
+  padding: 8px 8px 8px 28px;
+  border: 1px solid #4f1079;
+  border-radius: 6px;
+  position: relative;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  background-size: 16px;
+}
+
+/* Utilitários */
+.hidden {
+  display: none;
+}
+
+.no-scroll {
+  overflow: hidden; 
+}
+
+.relative {
+  position: relative;
+}
+
 .menu-section {
-    padding: 2rem 0;
-    scroll-margin-top: 100px;
+  padding: 2rem 0;
+  scroll-margin-top: 100px;
 }
 
-/* Adiciona scroll suave */
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+/* Ajuste para Navbar */
+.navbar {
+  z-index: 10; 
+}
+
+/* Centralização das opções na web em desktop */
+@media (min-width: 768px) {
+  .categories-container {
+    justify-content: center;
   }
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 600px) {
+  .carrinho-texto {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .carrinho-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: auto;
+  }
+
+  .carrinho-counter {
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 12px;
+    background-color: #e2e8f0;
+    color: #34053d;
+  }
+
+  footer {
+    padding: 10px;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer .carrinho-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  footer p {
+    margin: 0;
+    font-size: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
   
-
-/* Responsividade para mobile */
-@media (max-width: 768px) {
-    .categories-container {
-        padding: 0 0.5rem;
-        gap: 1rem;
-        justify-content: center;
-    }
-
-    .category-link {
-        padding: 0.5rem;
-        font-size: 0.875rem;
-    }
-}
-
-.hamburgueres-title {
-    margin-bottom: 15px; /* ou qualquer valor desejado */
-}
-
-.bebidas-title {
-    margin-bottom: 15px;
-}
-
-.sobremesas-title {
-    margin-bottom: 15px;
-}
-
+ 
 
 
 
