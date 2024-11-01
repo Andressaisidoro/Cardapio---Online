@@ -126,7 +126,7 @@ function formatCartItems() {
 }
 
 function sendOrderToWhatsApp(message) {
-    const phone = "+5511940058709"; 
+    const phone = "000000000"; // Coloque seu número de telefone
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank");
 }
 
