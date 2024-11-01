@@ -1,3 +1,16 @@
-![captura de tela-127-0-0-1-5500-índice-html-2024-10-17-21_46_23](https://github.com/user-attachments/assets/21804141-ddcc-41b0-91fe-a30c37972187)![FOTO 2](https://github.com/user-attachments/assets/9a2cab78-8b7d-4dc8-bc78-e6a23b40618b)
-![Carregando captura de tela-127-0-0-1-5500-index-html-2024-10-17-21_46_23.png...]()
+CARDÁPIO ONLINE
+
+Cardápio criado com HTML, CSS, TAILWIND e JAVASCRIPT totalmente responsivo e daptável a todos os dispositivos.
+
+Funções do cardápio:
+. Botão de "Aberto" em horário de funcionamento
+. Botão de "Fechado" fora do horário de funcionamento
+. Campo de pesquisa 
+. Navbar clicável que leva até a categoria
+. Modal abre ao clicar em "Veja meu carrinho"
+. Modal contém pedidos adicionados, o total que é calculado automaticamente, campos para inserir endereço de entrega, nome completo e pagamento. Com as opções de Cartão de Crédito/Débito, Pix, Dinheiro e Vale Refeição, ao escolher a opção Dinheiro um campo de troco é acionado.
+Contém também a opção de "Tipo de Delivery", que tem como escolha Delivery ou Retirada.
+. Se estiver fora do horário de funcionamento, no lugar de "Enviar" estará a opção "Agendar"
+. Os pedidos serão enviados diretamente para o Whatsapp do estabelecimento.![Uploading Modal.png…]()
+
 
